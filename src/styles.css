@@ -1,0 +1,32 @@
+#controls {
+	float: right;
+}
+
+#map {
+	width: 800px;
+	height: 800px;
+	border: 1px solid red;
+}
+
+#map svg {
+    position: absolute;
+    stroke-opacity: 0.33;
+    fill-opacity: 0.1;
+}
+
+.black {
+	color: black;
+}
+
+.black path {
+	stroke: black;
+    stroke-width: 1;
+}
+
+#vehicles {
+	position: absolute;
+    height: 800px;
+    width: 800px;
+    top: 9px;
+    left: 9px;
+}
