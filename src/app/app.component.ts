@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent  {
 	//These variables are what was needed to display the map in the right spot, admittedly mostly trial and error although I know I could have calculated it
 	private zoomFactor = 1;
+	private tempZoomFactor = this.zoomFactor;
 	factor = 0.55 * this.zoomFactor;
 	scale = 500000 * this.factor;
 	mapX = 1069150 * this.factor;
@@ -235,6 +236,7 @@ export class AppComponent  {
 	//when we change the zoom recalculate some values
 	zoomRedraw(){
 		//recalculate our base positioning values
+		this.zoomFactor = this.tempZoomFactor;
 		this.factor = 0.55 * this.zoomFactor;
 		this.scale = 500000 * this.factor;
 		this.mapX = 1069150 * this.factor;
