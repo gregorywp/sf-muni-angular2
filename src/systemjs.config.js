@@ -27,7 +27,8 @@
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'd3' : 'npm:d3',
-      'd3-geo' : 'npm:d3-geo'
+      'd3-geo' : 'npm:d3-geo',
+      'underscore': 'npm:underscore'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -48,6 +49,10 @@
       },
       'd3-geo': {
         main: 'build/d3-geo.js',
+        defaultExtension: 'js'
+      },
+      'underscore': {
+        main: 'underscore.js',
         defaultExtension: 'js'
       }
     }

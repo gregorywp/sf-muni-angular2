@@ -1,11 +1,74 @@
+#left {
+    width: 800px;
+    height: 800px;
+    border: 1px solid red;
+    float: left;
+    margin-right: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+#leftScroll {
+    width: 800px;
+    height: 800px;
+    overflow: scroll;
+    position: relative;
+}
+
 #controls {
-	float: right;
+
+}
+
+#controls .colorBar {
+    width: 30px;
+    height: 10px;
+    display: inline-block;
+}
+
+#controls h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#controls .routes {
+
+}
+
+#controls .routes .route {
+    float: left;
+    width: 80px;
+    margin: 10px;
+    height: 27px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#controls .routes .route.selected {
+    border: 2px solid red;
+    height: 23px;
+    width: 76px;
+}
+
+#controls .routeName {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: 3px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#controls .route.selected .routeName {
+    margin-top: 1px;
+}
+
+#controls button {
+
 }
 
 #map {
-	width: 800px;
-	height: 800px;
-	border: 1px solid red;
+
 }
 
 #map svg {
@@ -25,8 +88,14 @@
 
 #vehicles {
 	position: absolute;
-    height: 800px;
-    width: 800px;
     top: 9px;
     left: 9px;
+}
+
+#vehicles circle, #vehicles polygon {
+    transition: cy 1s linear, cx 1s linear;
+}
+
+.clear {
+    clear: both;
 }
