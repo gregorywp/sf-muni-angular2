@@ -1,5 +1,7 @@
 This code is live here: http://dev.gregoryprill.com/sf-muni/
 
+Most of the important action is taking place in /src/app/app.component.ts and app.component.html. The rest of this repo is from the official Angular2 quickstart seed.
+
 This is from a challenge that reads as follows:
 
 For this project, you will be using d3.js (http://d3js.org) to draw the real-time positions of San Francisco's buses and trains (SF Muni).
