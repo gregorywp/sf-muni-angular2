@@ -88,8 +88,8 @@
 
 #vehicles {
 	position: absolute;
-    top: 9px;
-    left: 9px;
+    top: 0;
+    left: 0;
 }
 
 #vehicles circle, #vehicles polygon {

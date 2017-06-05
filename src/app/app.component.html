@@ -2,33 +2,33 @@
 	<div id="leftScroll">
 		<div id="map" [style]="getZoomStyles()"></div>
 		<div id="vehicles" [style]="getZoomStyles()">
-			<svg [attr.width]="800*zoomFactor" [attr.height]="800*zoomFactor">
-				<ng-template ngFor let-vehicle [ngForOf]="vehicles">
+			<svg [attr.width]="800*mapService.zoomFactor" [attr.height]="800*mapService.zoomFactor">
+				<ng-template ngFor let-vehicle [ngForOf]="vehicleService.vehicles">
 					<ng-template [ngIf]="vehicle.cx&&vehicle.cy&&!vehicle.routeHide">
-						<circle [attr.cx]="vehicle.cx" [attr.cy]="vehicle.cy" [attr.r]="radius+'px'" [attr.fill]="'#'+hashColor(vehicle.routeTag)"></circle>
+						<circle [attr.cx]="vehicle.cx" [attr.cy]="vehicle.cy" [attr.r]="mapService.radius+'px'" [attr.fill]="'#'+vehicleService.hashColor(vehicle.routeTag)"></circle>
 						<!-- started trying to use heading information but didn't seem accurate-->
-						<!-- <polygon *ngIf="validHeading(vehicle.heading)" [attr.points]="getPoints(vehicle.cx,vehicle.cy)" [attr.fill]="'#'+hashColor(vehicle.routeTag)" [style]="domSanitizer.bypassSecurityTrustStyle('transform: rotate('+vehicle.heading+'deg);transform-origin: 50% 50%')"></polygon> -->
+						<!-- <polygon *ngIf="vehicle.validHeading()" [attr.points]="vehicle.getPolygonPoints()" [attr.fill]="'#'+vehicleService.hashColor(vehicle.routeTag)" [style]="domSanitizer.bypassSecurityTrustStyle('transform: rotate('+vehicle.heading+'deg);transform-origin: 50% 50%')"></polygon> -->
 					</ng-template>
 				</ng-template>
 			</svg>
 		</div>
 	</div>
 </div>
-	<div id="controls">
-		<div>
-			<h3>Zoom Factor</h3>
-			<input type="range" min="1" max="10" [(ngModel)]="tempZoomFactor" (change)="zoomRedraw()"/>
-		</div>
-		<div>
-			<h3>Routes: Click Routes to Select Only Those Vehicles</h3>
-			<button (click)="resetRoutes()">Reset Routes</button>
-		</div>
-		<div class="routes">
-			<ng-template ngFor let-route [ngForOf]="routes">
-				<div class="route" [ngStyle]="{'background-color': '#' + route.color}" (click)="setSelectedRoute(route)" [class.selected]="route.selected">
-					<span class="routeName">{{route.name}}</span>
-				</div>
-			</ng-template>
-			<div class="clear"></div>
-		</div>
+<div id="controls">
+	<div>
+		<h3>Zoom Factor</h3>
+		<input type="range" min="1" max="10" [(ngModel)]="mapService.tempZoomFactor" (change)="zoomRedraw()"/>
 	</div>
+	<div>
+		<h3>Routes: Click Routes to Select Only Those Vehicles</h3>
+		<button (click)="vehicleService.resetRoutes()">Reset Routes</button>
+	</div>
+	<div class="routes">
+		<ng-template ngFor let-route [ngForOf]="vehicleService.routes">
+			<div class="route" [ngStyle]="{'background-color': '#' + route.color}" (click)="vehicleService.setSelectedRoute(route)" [class.selected]="route.selected">
+				<span class="routeName">{{route.name}}</span>
+			</div>
+		</ng-template>
+		<div class="clear"></div>
+	</div>
+</div>
