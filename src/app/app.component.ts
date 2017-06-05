@@ -274,7 +274,7 @@ export class AppComponent  {
 		return points.join(' ');
 	}
 }
-//necessary interfaces for angular to not complain what is and isn't in an object
+//necessary interfaces for our special types, in a full application we would probably import these and they would have their own functions
 interface Vehicle {
 	lat?: number;
 	lon?: number;
