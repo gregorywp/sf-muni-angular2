@@ -1,6 +1,6 @@
 This code is live here: http://dev.gregoryprill.com/sf-muni/
 
-Most of the important action is taking place in /src/app/app.component.ts and app.component.html. The rest of this repo is from the official Angular2 quickstart seed.
+Most of the important action is taking place in /src/app/ folder. The rest of this repo is from the official Angular2 quickstart seed.
 
 This is from a challenge that reads as follows:
 
